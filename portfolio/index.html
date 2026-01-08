@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="sl-theme-dark" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,56 +8,53 @@
     <!-- Shoelace -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/themes/light.css"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
     />
+    <link rel="stylesheet" href="styles.css" />
     <script
       type="module"
-      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/shoelace.js"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
     ></script>
-
-    <style>
-      body {
-        margin: 0;
-        font-family: system-ui, sans-serif;
-        background: #f8fafc;
-        color: #0f172a;
-      }
-
-      main {
-        max-width: 900px;
-        margin: auto;
-        padding: 2rem 1rem;
-      }
-
-      section {
-        margin-bottom: 3rem;
-      }
-
-      h2 {
-        margin-bottom: 1rem;
-        font-size: 1.4rem;
-      }
-
-      .tags sl-tag {
-        margin: 0.25rem;
-      }
-    </style>
   </head>
 
   <body>
     <main>
-      <!-- ABOUT ME -->
-      <section>
-        <sl-card>
-          <h2>About Me</h2>
-          <p>
-            I am a Front-End Developer with industry experience in building
-            scalable and accessible web applications using modern web
-            technologies. My professional experience has motivated me to pursue
-            a Master’s degree to strengthen my foundations in computer science
-            and advanced data-driven systems.
-          </p>
-        </sl-card>
+      <!-- HERO / LANDING -->
+      <section class="hero" id="hero">
+        <div class="hero-inner">
+          <div class="hero-text">
+            <h1>Venkateshwaran</h1>
+            <p class="hero-sub">Frontend Developer</p>
+          </div>
+
+          <div class="hero-profile">
+            <img src="../assets/8pp06.jpg" alt="Profile image" />
+          </div>
+        </div>
+
+        <a class="hero-button" href="#content" aria-label="See more"
+          >See my work</a
+        >
+      </section>
+      <!-- ABOUT ME & CONTENT -->
+      <section id="content">
+        <a class="top-bar" href="#hero" aria-label="Back to top">Back to top</a>
+        <div class="about-container">
+          <sl-card class="about-card">
+            <h2>About Me</h2>
+            <p>
+              I am a Front-End Developer with industry experience in building
+              scalable and accessible web applications using modern web
+              technologies. My professional experience has motivated me to
+              pursue a Master’s degree to strengthen my foundations in computer
+              science and advanced data-driven systems.
+            </p>
+          </sl-card>
+
+          <div class="profile">
+            <img src="../assets/8pp06.jpg" alt="Sample profile image" />
+          </div>
+        </div>
       </section>
 
       <!-- EDUCATION -->
@@ -146,5 +143,21 @@
         </sl-card>
       </section>
     </main>
+
+    <script>
+      // Smooth scroll to target using absolute position to ensure direction is correct
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (!href || href.charAt(0) !== "#") return;
+          const target = document.querySelector(href);
+          if (!target) return;
+
+          e.preventDefault();
+          const top = target.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({ top, behavior: "smooth" });
+        });
+      });
+    </script>
   </body>
 </html>
