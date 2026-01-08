@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Venkateshwaran | Frontend Developer</title>
+
+    <!-- Shoelace -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/themes/light.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/shoelace.js"
+    ></script>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        background: #f8fafc;
+        color: #0f172a;
+      }
+
+      main {
+        max-width: 900px;
+        margin: auto;
+        padding: 2rem 1rem;
+      }
+
+      section {
+        margin-bottom: 3rem;
+      }
+
+      h2 {
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+      }
+
+      .tags sl-tag {
+        margin: 0.25rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <!-- ABOUT ME -->
+      <section>
+        <sl-card>
+          <h2>About Me</h2>
+          <p>
+            I am a Front-End Developer with industry experience in building
+            scalable and accessible web applications using modern web
+            technologies. My professional experience has motivated me to pursue
+            a Master’s degree to strengthen my foundations in computer science
+            and advanced data-driven systems.
+          </p>
+        </sl-card>
+      </section>
+
+      <!-- EDUCATION -->
+      <section>
+        <h2>Education</h2>
+        <sl-card>
+          <strong>Bachelor of Engineering – Computer Science</strong>
+          <p>Thiagarajar College of Engineering</p>
+          <p>CGPA: 9.46</p>
+
+          <sl-details summary="Relevant Coursework">
+            Data Structures, Algorithms, DBMS, Operating Systems, Web
+            Technologies
+          </sl-details>
+        </sl-card>
+      </section>
+
+      <!-- WORK EXPERIENCE -->
+      <section>
+        <h2>Work Experience</h2>
+        <sl-card>
+          <strong>Software Engineer – Frontend</strong>
+          <p>Caterpillar Inc.</p>
+
+          <ul>
+            <li>Developed reusable UI components using Web Components</li>
+            <li>Collaborated with backend and UX teams</li>
+            <li>Worked on performance optimization and accessibility</li>
+          </ul>
+
+          <div class="tags">
+            <sl-tag>JavaScript</sl-tag>
+            <sl-tag>Web Components</sl-tag>
+            <sl-tag>HTML</sl-tag>
+            <sl-tag>CSS</sl-tag>
+          </div>
+        </sl-card>
+      </section>
+
+      <!-- TECHNICAL SKILLS -->
+      <section>
+        <h2>Technical Skills</h2>
+        <sl-card>
+          <p><strong>Languages:</strong> JavaScript, HTML, CSS</p>
+          <p><strong>Web:</strong> Web Components, Shoelace, REST APIs</p>
+          <p><strong>Tools:</strong> Git, GitHub, VS Code</p>
+          <p><strong>Currently Learning:</strong> Data Science, Python</p>
+        </sl-card>
+      </section>
+
+      <!-- PROJECTS -->
+      <section>
+        <h2>Projects</h2>
+        <sl-card>
+          <strong>Portfolio Website</strong>
+          <p>
+            Designed and developed a personal portfolio using Shoelace Web
+            Components and GitHub Pages to present academic and professional
+            background.
+          </p>
+          <sl-button variant="primary" href="#" target="_blank">
+            GitHub
+          </sl-button>
+        </sl-card>
+      </section>
+
+      <!-- INTERESTS -->
+      <section>
+        <h2>Interests & Hobbies</h2>
+        <sl-card>
+          <ul>
+            <li>Strength training and fitness</li>
+            <li>Cooking</li>
+            <li>Reading technology blogs</li>
+          </ul>
+        </sl-card>
+      </section>
+
+      <!-- CONTACT -->
+      <section>
+        <h2>Contact</h2>
+        <sl-card>
+          <p>Email: your.email@example.com</p>
+          <p>GitHub: github.com/yourusername</p>
+          <p>LinkedIn: linkedin.com/in/yourprofile</p>
+        </sl-card>
+      </section>
+    </main>
+  </body>
+</html>
