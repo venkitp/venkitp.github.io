@@ -18,8 +18,17 @@
   </head>
 
   <body>
+    <nav id="top-nav" class="top-nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <span class="nav-name">Venkateshwaran TP</span>
+        <div class="nav-links">
+          <a href="#content">Work</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
     <main>
-
       <!-- HERO / LANDING -->
       <section class="hero" id="hero">
         <div class="hero-inner">
@@ -32,209 +41,457 @@
             <img src="../assets/8pp06.jpg" alt="Profile image" />
           </div>
         </div>
-
+        <!-- 
         <a class="hero-button" href="#content" aria-label="See more"
           >See my work</a
-        >
+        > -->
       </section>
       <!-- ABOUT ME & CONTENT -->
-       <section id="content">
-      <a class="top-bar" href="#hero" aria-label="Back to top">Back to top</a>
-      <div class="about-container">
-        <sl-card>
-          <div>
-          <h2>About Me</h2>
-          <p>
-            I am a Front-End Developer with industry experience in building
-            scalable and accessible web applications using modern web
-            technologies. My professional experience has motivated me to pursue
-            a Master’s degree to strengthen my foundations in computer science
-            and advanced data-driven systems.
-          </p>
-        </sl-card>
+      <section id="content">
+        <!-- <a class="top-bar" href="#hero" aria-label="Back to top">Back to top</a> -->
+        <div class="whole-container">
+          <div class="first-container">
+            <sl-card class="first-card">
+              <h2>ABOUT ME</h2>
+              <p>
+                A Computer Science Engineer with strong expertise in Front End
+                Development, focused on building user-friendly, accessible, and
+                visually appealing web applications. Experienced in developing
+                responsive UI components using modern frameworks and best
+                practices, with a keen eye for performance and usability.
+              </p>
+              <br />
 
-  
-      </div>
-      <div class="carousel-cards">
-      <sl-carousel slides-per-page="3" autoplay loop>
-        <sl-carousel-item>
-          <sl-card>
-            <div>
-              <img src="../assets/angular.jpeg" alt="Angular Logo" />
-              <h3>Angular</h3>
+              <p>
+                Currently seeking educational opportunities in Data Science,
+                Data Analytics and Applied Machine Learning to strengthen my
+                analytical and problem-solving skills, and to integrate
+                data-driven approaches into real-world software development.
+                Motivated to continuously learn, adapt, and contribute
+                effectively in both academic and professional environments.
+              </p>
+            </sl-card>
+          </div>
+          <div class="carousel-cards">
+            <sl-carousel slides-per-page="3" autoplay loop>
+              <sl-carousel-item>
+                <sl-card>
+                  <div>
+                    <img src="../assets/angular.jpeg" alt="Angular Logo" />
+                    <h3>Angular</h3>
+                  </div>
+                </sl-card>
+              </sl-carousel-item>
+
+              <sl-carousel-item>
+                <sl-card>
+                  <div>
+                    <img src="../assets/react.png" alt="React Logo" />
+                    <h3>React</h3>
+                  </div>
+                </sl-card>
+              </sl-carousel-item>
+              <sl-carousel-item>
+                <sl-card>
+                  <div>
+                    <img src="../assets/next.png" alt="NextJS Logo" />
+                    <h3>NextJS</h3>
+                  </div>
+                </sl-card>
+              </sl-carousel-item>
+              <sl-carousel-item>
+                <sl-card>
+                  <div>
+                    <img src="../assets/c.jpeg" alt="C Logo" />
+                    <h3>C Programming</h3>
+                  </div>
+                </sl-card>
+              </sl-carousel-item>
+              <sl-carousel-item>
+                <sl-card>
+                  <div>
+                    <img src="../assets/typescript.png" alt="TypeScript Logo" />
+                    <h3>TypeScript</h3>
+                  </div>
+                </sl-card>
+              </sl-carousel-item>
+              <sl-carousel-item>
+                <sl-card>
+                  <div>
+                    <img src="../assets/css.png" alt="CSS Logo" />
+                    <h3>CSS</h3>
+                  </div>
+                </sl-card>
+              </sl-carousel-item>
+              <sl-carousel-item>
+                <sl-card>
+                  <div>
+                    <img src="../assets/html.png" alt="HTML Logo" />
+                    <h3>HTML</h3>
+                  </div>
+                </sl-card>
+              </sl-carousel-item>
+              <sl-carousel-item>
+                <sl-card>
+                  <div>
+                    <img src="../assets/JS.png" alt="JavaScript Logo" />
+                    <h3>JavaScript</h3>
+                  </div>
+                </sl-card>
+              </sl-carousel-item>
+              <sl-carousel-item>
+                <sl-card>
+                  <div>
+                    <img src="../assets/lit.jpeg" alt="Lit Logo" />
+                    <h3>Lit</h3>
+                  </div>
+                </sl-card>
+              </sl-carousel-item>
+            </sl-carousel>
+          </div>
+          <!-- EDUCATION -->
+          <section id="education" class="edu-section">
+            <h2 style="margin-bottom: 30px">EDUCATION</h2>
+            <div class="edu-controls">
+              <sl-progress-bar
+                id="edu-progress"
+                value="0"
+                max="100"
+                show-value
+                class="edu-progress"
+                aria-label="Education progress"
+              ></sl-progress-bar>
+            </div>
+
+            <sl-carousel
+              class="edu-carousel scroll-hint"
+              slides-per-page="1"
+              mouse-dragging
+              style="--scroll-hint: 12%"
+            >
+              <sl-carousel-item>
+                <sl-card>
+                  <div class="edu-panel">
+                    <h3>Secondary School</h3>
+                    <p><strong>Secondary School Certificate</strong></p>
+                    <p>Indian School, Ras Al Khaimah, UAE</p>
+                    <p>Board: CBSE</p>
+                    <p>Year: 2018</p>
+                    <p>Key Subjects: Mathematics, Physics, Chemistry</p>
+                    <p>Grade: 90%</p>
+                  </div>
+                </sl-card>
+              </sl-carousel-item>
+
+              <sl-carousel-item>
+                <sl-card>
+                  <div class="edu-panel">
+                    <h3>Higher Secondary</h3>
+                    <p><strong>Higher Secondary Certificate</strong></p>
+                    <p>Indian School, Ras Al Khaimah, UAE</p>
+                    <p>Board: CBSE</p>
+                    <p>Year: 2020</p>
+                    <p>Key Subjects: Mathematics, Computer Science</p>
+                    <p>Grade: 93.8%</p>
+                  </div>
+                </sl-card>
+              </sl-carousel-item>
+
+              <sl-carousel-item>
+                <sl-card>
+                  <div class="edu-panel">
+                    <h3>College</h3>
+                    <p>
+                      <strong
+                        >Bachelor of Engineering – Computer Science and
+                        Engineering</strong
+                      >
+                    </p>
+                    <p>Thiagarajar College of Engineering, Madurai, India</p>
+                    <p>CGPA: 9.46</p>
+                    <p>
+                      Relevant Coursework: Data Structures, Algorithms, DBMS,
+                      Operating Systems, Web Technologies
+                    </p>
+                  </div>
+                </sl-card>
+              </sl-carousel-item>
+            </sl-carousel>
+          </section>
+
+          <!-- WORK EXPERIENCE -->
+          <h2>WORK EXPERIENCE</h2>
+          <sl-card class="work-card" aria-label="Work experience comparison">
+            <div
+              class="work-sides"
+              role="group"
+              aria-label="Current and previous roles"
+            >
+              <div
+                class="work-side work-left"
+                tabindex="0"
+                aria-label="Current role"
+              >
+                <h3>Associate Software Engineer (Current)</h3>
+                <p class="company">Caterpillar Inc. • 2024 Jul–Present</p>
+
+                <ul>
+                  <li>
+                    Specialized in building UI frameworks using cutting edge
+                    technology and frameworks like Angular, React and Next JS
+                  </li>
+                  <br />
+                  <li>Working with git and GitHub version control systems</li>
+                  <br />
+                  <li>Experience with yarn and node package managers</li>
+                  <br />
+                  <li>
+                    Experience in writing scripts for transformation of code
+                    using JSCodeshift, cheerio.
+                  </li>
+                  <br />
+                  <li>
+                    Built web components in the form of a standard UI library
+                    for the whole organization which can be used by other UI
+                    teams in order to leverage their own UI
+                  </li>
+                  <br />
+                  <li>
+                    Provided a systematic plan to migrate code from one version
+                    to another without introducing breaking changes by using
+                    command line scripts to migrate the changes automatically
+                  </li>
+                  <br />
+                  <li>
+                    Provided a method to use the standardized web components
+                    library by using CDN’s which are compatible with different
+                    other UI libraries like AEM.
+                  </li>
+                </ul>
+
+                <div class="tags">
+                  <sl-tag>JavaScript</sl-tag>
+                  <sl-tag>Web Components</sl-tag>
+                  <sl-tag>Accessibility</sl-tag>
+                  <sl-tag>Typescript</sl-tag>
+                  <sl-tag>Angular</sl-tag>
+                  <sl-tag>React</sl-tag>
+                  <sl-tag>NextJS</sl-tag>
+                  <sl-tag>GitHub</sl-tag>
+                </div>
+              </div>
+
+              <div class="divider" aria-hidden="true"></div>
+
+              <div
+                class="work-side work-right"
+                tabindex="0"
+                aria-label="Previous role"
+              >
+                <h3>Intern</h3>
+                <p class="company">Caterpillar Inc. Jan 2024 - Jul 2024</p>
+
+                <ul>
+                  <li>
+                    Developed different UI components required by any UI
+                    library. Components developed include Side Navigation,
+                    Primary Navigation.
+                  </li>
+                  <br />
+                  <li>Collaborated with design team to refine UX patterns</li>
+                  <br />
+                  <li>
+                    Enhanced the already built UI components like Table, Tabs,
+                    Anchor Navigation, Accordion with accessibility features.
+                  </li>
+                  <br />
+                  <li>
+                    Excelled in different accessibility tools like screen
+                    readers in different platforms like Voiceover, Talkback,
+                    NVDA, JAWS
+                  </li>
+                  <br />
+                  <li>
+                    Introduced concepts like Lazy Loading and Virtualization for
+                    different UI components in the standardized UI library
+                  </li>
+                </ul>
+
+                <div class="tags">
+                  <sl-tag>React</sl-tag>
+                  <sl-tag>TypeScript</sl-tag>
+                  <sl-tag>Accessibility</sl-tag>
+                  <sl-tag>Web Components</sl-tag>
+                  <sl-tag>Script Writing</sl-tag>
+                  <sl-tag>CSS</sl-tag>
+                  <sl-tag>HTML</sl-tag>
+                </div>
+              </div>
             </div>
           </sl-card>
-        </sl-carousel-item>
-        
-        <sl-carousel-item>
-          <sl-card>
-            <div>
-              <img src="../assets/react.png" alt="React Logo" />
-              <h3>React</h3>
+
+          <!-- TECHNICAL SKILLS -->
+
+          <section class="projects-section" id="projects">
+            <h2>Projects</h2>
+
+            <!-- Other Projects -->
+            <div class="projects-grid">
+              <sl-card class="project compact">
+                <h3>Bachelor Thesis - Image Processing</h3>
+                <p>
+                  Attendance Management System using Image Processing and
+                  Classification
+                </p>
+                <div class="project-tags">
+                  <sl-tag>Image Processing</sl-tag>
+                  <sl-tag>OpenCV</sl-tag>
+                </div>
+              </sl-card>
+
+              <sl-card class="project compact">
+                <h3>Bachelor Project - Data Science and Machine Learning</h3>
+                <p>Analysis of the different methods of detection of ADHD</p>
+                <div class="project-tags">
+                  <sl-tag>Machine Learning</sl-tag>
+                  <sl-tag>Data Analysis</sl-tag>
+                </div>
+              </sl-card>
+
+              <sl-card class="project compact">
+                <h3>Bachelor Project - Data Science and Machine Learning</h3>
+                <p>Analysis of the different methods of clickbait detection</p>
+                <div class="project-tags">
+                  <sl-tag>Machine Learning</sl-tag>
+                  <sl-tag>Data Analysis</sl-tag>
+                </div>
+              </sl-card>
             </div>
-          </sl-card>
-        </sl-carousel-item>
-        <sl-carousel-item>
+          </section>
+
+          <!-- INTERESTS -->
+          <!-- <h2>Interests & Hobbies</h2>
           <sl-card>
-            <div>
-              <img src="../assets/next.png" alt="NextJS Logo" />
-              <h3>NextJS</h3>
-            </div>
-          </sl-card>
-        </sl-carousel-item>
-        <sl-carousel-item>
+            <ul>
+              <li>Strength training and fitness</li>
+              <li>Cooking</li>
+              <li>Reading technology blogs</li>
+            </ul>
+          </sl-card> -->
+
+          <!-- CONTACT -->
+          <!-- <h2>Contact</h2>
           <sl-card>
-            <div>
-              <img src="../assets/c.jpeg" alt="C Logo" />
-              <h3>C Programming</h3>
-            </div>
-          </sl-card>
-        </sl-carousel-item>
-        <sl-carousel-item>
-          <sl-card>
-            <div>
-              <img src="../assets/typescript.png" alt="TypeScript Logo" />
-              <h3>TypeScript</h3>
-            </div>
-          </sl-card>
-        </sl-carousel-item>
-      </sl-carousel>
-</div>
-      <!-- EDUCATION -->
-      <h2>Education</h2>
-      <section id="education" class="edu-section">
-        <div class="edu-controls">
-          <sl-progress-bar id="edu-progress" value="0" max="100" show-value class="edu-progress" aria-label="Education progress"></sl-progress-bar>
+            <p>Email: your.email@example.com</p>
+            <p>GitHub: github.com/yourusername</p>
+            <p>LinkedIn: linkedin.com/in/yourprofile</p>
+          </sl-card> -->
         </div>
-
-        <sl-carousel class="edu-carousel scroll-hint" slides-per-page="1" mouse-dragging style="--scroll-hint: 12%;">
-          <sl-carousel-item>
-            <sl-card>
-              <div class="edu-panel">
-                <h3>Secondary School</h3>
-                <p><strong>Secondary School Certificate</strong></p>
-                <p>XYZ High School</p>
-                <p>Board: State Board</p>
-                <p>Year: 2014</p>
-                <p>Key Subjects: Mathematics, Physics, Chemistry</p>
-              </div>
-            </sl-card>
-          </sl-carousel-item>
-
-          <sl-carousel-item>
-            <sl-card>
-              <div class="edu-panel">
-                <h3>Higher Secondary</h3>
-                <p><strong>Higher Secondary Certificate</strong></p>
-                <p>ABC Higher Secondary School</p>
-                <p>Board: State Board</p>
-                <p>Year: 2016</p>
-                <p>Key Subjects: Mathematics, Computer Science</p>
-              </div>
-            </sl-card>
-          </sl-carousel-item>
-
-          <sl-carousel-item>
-            <sl-card>
-              <div class="edu-panel">
-                <h3>College</h3>
-                <p><strong>Bachelor of Engineering – Computer Science</strong></p>
-                <p>Thiagarajar College of Engineering</p>
-                <p>CGPA: 9.46</p>
-                <p>Relevant Coursework: Data Structures, Algorithms, DBMS, Operating Systems, Web Technologies</p>
-              </div>
-            </sl-card>
-          </sl-carousel-item>
-        </sl-carousel>
       </section>
+      <footer class="site-footer" id="contact">
+        <div class="footer-inner">
+          <!-- Contact -->
+          <div class="footer-section">
+            <h3>Contact</h3>
 
-      <!-- WORK EXPERIENCE -->
-      <h2>Work Experience</h2>
-      <sl-card class="work-card" aria-label="Work experience comparison">
-        <div class="work-sides" role="group" aria-label="Current and previous roles">
-          <div class="work-side work-left" tabindex="0" aria-label="Current role">
-            <h3>Software Engineer — Frontend (Current)</h3>
-            <p class="company">Caterpillar Inc. • 2022–Present</p>
+            <p class="footer-item">
+              <sl-icon name="envelope"></sl-icon>
+              <a href="mailto:tpvenkateshwaran@gmail.com">
+                tpvenkateshwaran@gmail.com
+              </a>
+            </p>
 
-            <ul>
-              <li>Lead frontend development for key enterprise features</li>
-              <li>Built reusable Web Component library</li>
-              <li>Improved performance and accessibility across products</li>
-            </ul>
+            <p class="footer-item">
+              <sl-icon name="github"></sl-icon>
+              <a href="https://github.com/venkitp" target="_blank">
+                github.com/venkitp
+              </a>
+            </p>
 
-            <div class="tags">
-              <sl-tag>JavaScript</sl-tag>
-              <sl-tag>Web Components</sl-tag>
-              <sl-tag>Accessibility</sl-tag>
-            </div>
+            <p class="footer-item">
+              <sl-icon name="linkedin"></sl-icon>
+              <a
+                href="https://linkedin.com/in/venkateshwarantp"
+                target="_blank"
+              >
+                linkedin.com/in/venkateshwarantp
+              </a>
+            </p>
           </div>
 
-          <div class="divider" aria-hidden="true"></div>
+          <!-- Address -->
+          <div class="footer-section">
+            <h3>Address</h3>
 
-          <div class="work-side work-right" tabindex="0" aria-label="Previous role">
-            <h3>Frontend Developer (Previous)</h3>
-            <p class="company">ACME Corp. • 2018–2022</p>
+            <p class="footer-item">
+              <sl-icon name="geo-alt"></sl-icon>
+              Madurai, Tamil Nadu, India
+            </p>
 
-            <ul>
-              <li>Implemented responsive UI for customer portal</li>
-              <li>Collaborated with design team to refine UX patterns</li>
-              <li>Maintained component library and QA automation</li>
-            </ul>
+            <p class="footer-item">
+              <sl-icon name="briefcase"></sl-icon>
+              Open to relocation
+            </p>
+          </div>
 
-            <div class="tags">
-              <sl-tag>React</sl-tag>
-              <sl-tag>TypeScript</sl-tag>
-              <sl-tag>Testing</sl-tag>
-            </div>
+          <!-- CTA -->
+          <div class="footer-section footer-cta">
+            <h3>Let’s work together</h3>
+            <p>Interested in collaborating or discussing opportunities?</p>
+
+            <sl-button variant="primary" href="mailto:your.email@example.com">
+              Get in touch
+            </sl-button>
           </div>
         </div>
-      </sl-card>
 
-      <!-- TECHNICAL SKILLS -->
-      <h2>Technical Skills</h2>
-      <sl-card>
-        <p><strong>Languages:</strong> JavaScript, HTML, CSS</p>
-        <p><strong>Web:</strong> Web Components, Shoelace, REST APIs</p>
-        <p><strong>Tools:</strong> Git, GitHub, VS Code</p>
-        <p><strong>Currently Learning:</strong> Data Science, Python</p>
-      </sl-card>
-
-      <!-- PROJECTS -->
-      <h2>Projects</h2>
-      <sl-card>
-        <strong>Portfolio Website</strong>
-        <p>
-          Designed and developed a personal portfolio using Shoelace Web
-          Components and GitHub Pages to present academic and professional
-          background.
-        </p>
-        <sl-button variant="primary" href="#" target="_blank">
-          GitHub
-        </sl-button>
-      </sl-card>
-
-      <!-- INTERESTS -->
-      <h2>Interests & Hobbies</h2>
-      <sl-card>
-        <ul>
-          <li>Strength training and fitness</li>
-          <li>Cooking</li>
-          <li>Reading technology blogs</li>
-        </ul>
-      </sl-card>
-
-      <!-- CONTACT -->
-      <h2>Contact</h2>
-      <sl-card>
-        <p>Email: your.email@example.com</p>
-        <p>GitHub: github.com/yourusername</p>
-        <p>LinkedIn: linkedin.com/in/yourprofile</p>
-      </sl-card>
-    </div>
-       </section>
+        <div class="footer-bottom">
+          <p>
+            © <span id="year"></span> Venkateshwaran TP. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </main>
 
     <script>
+      document.querySelectorAll(".project, .work-side").forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty("--x", `${e.clientX - rect.left}px`);
+          card.style.setProperty("--y", `${e.clientY - rect.top}px`);
+        });
+      });
+      (function () {
+        const hero = document.getElementById("hero");
+        const nav = document.getElementById("top-nav");
+
+        if (!hero || !nav) return;
+
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            /*
+          entry.intersectionRatio:
+          1.0  → hero fully visible
+          0.5  → half visible
+          0.0  → fully out of view
+        */
+
+            if (entry.intersectionRatio < 0.5) {
+              // More than half of hero is gone → show nav
+              nav.classList.add("visible");
+            } else {
+              // Half or more of hero is visible → hide nav
+              nav.classList.remove("visible");
+            }
+          },
+          {
+            threshold: [0.5],
+          }
+        );
+
+        observer.observe(hero);
+      })();
+
       // Smooth scroll to target using absolute position to ensure direction is correct
       document.querySelectorAll('a[href^="#"]').forEach((a) => {
         a.addEventListener("click", function (e) {
@@ -251,21 +508,21 @@
 
       // Animate hero when it enters viewport using IntersectionObserver
       (function () {
-        const hero = document.getElementById('hero');
-        const heroText = document.querySelector('.hero-text');
-        const heroProfile = document.querySelector('.hero-profile');
+        const hero = document.getElementById("hero");
+        const heroText = document.querySelector(".hero-text");
+        const heroProfile = document.querySelector(".hero-profile");
         if (!hero || !heroText) return;
 
         const obs = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
-                heroText.classList.add('animate-bounce');
-                if (heroProfile) heroProfile.classList.add('animate-pop');
+                heroText.classList.add("animate-bounce");
+                if (heroProfile) heroProfile.classList.add("animate-pop");
               } else {
                 // remove classes so animation can replay on re-entry
-                heroText.classList.remove('animate-bounce');
-                if (heroProfile) heroProfile.classList.remove('animate-pop');
+                heroText.classList.remove("animate-bounce");
+                if (heroProfile) heroProfile.classList.remove("animate-pop");
               }
             });
           },
@@ -277,16 +534,16 @@
 
       // Education carousel using Shoelace: sync progress bar and arrows with <sl-carousel>
       (function () {
-        const eduSection = document.getElementById('education');
+        const eduSection = document.getElementById("education");
         if (!eduSection) return;
 
-        const carousel = eduSection.querySelector('sl-carousel');
+        const carousel = eduSection.querySelector("sl-carousel");
         if (!carousel) return;
 
-        const items = Array.from(carousel.querySelectorAll('sl-carousel-item'));
-        const progress = document.getElementById('edu-progress');
-        const prevBtn = eduSection.querySelector('.edu-prev');
-        const nextBtn = eduSection.querySelector('.edu-next');
+        const items = Array.from(carousel.querySelectorAll("sl-carousel-item"));
+        const progress = document.getElementById("edu-progress");
+        const prevBtn = eduSection.querySelector(".edu-prev");
+        const nextBtn = eduSection.querySelector(".edu-next");
         let current = 0;
 
         function updateArrows(i) {
@@ -302,25 +559,39 @@
 
         // clickable progress bar -> jump to slide
         if (progress) {
-          progress.style.cursor = 'pointer';
-          progress.addEventListener('click', (e) => {
+          progress.style.cursor = "pointer";
+          progress.addEventListener("click", (e) => {
             const rect = progress.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const frac = Math.max(0, Math.min(1, x / rect.width));
             const idx = Math.round(frac * (items.length - 1));
-            if (typeof carousel.goToSlide === 'function') {
-              try { carousel.goToSlide(idx, 'smooth'); } catch (err) { carousel.goToSlide(idx); }
+            if (typeof carousel.goToSlide === "function") {
+              try {
+                carousel.goToSlide(idx, "smooth");
+              } catch (err) {
+                carousel.goToSlide(idx);
+              }
             }
           });
         }
 
         // arrow handlers -> use carousel methods (these emit sl-slide-change)
-        if (prevBtn) prevBtn.addEventListener('click', () => { if (typeof carousel.previous === 'function') carousel.previous('smooth'); });
-        if (nextBtn) nextBtn.addEventListener('click', () => { if (typeof carousel.next === 'function') carousel.next('smooth'); });
+        if (prevBtn)
+          prevBtn.addEventListener("click", () => {
+            if (typeof carousel.previous === "function")
+              carousel.previous("smooth");
+          });
+        if (nextBtn)
+          nextBtn.addEventListener("click", () => {
+            if (typeof carousel.next === "function") carousel.next("smooth");
+          });
 
         // listen to carousel slide change events to sync UI
-        carousel.addEventListener('sl-slide-change', (ev) => {
-          const idx = ev.detail && typeof ev.detail.index === 'number' ? ev.detail.index : 0;
+        carousel.addEventListener("sl-slide-change", (ev) => {
+          const idx =
+            ev.detail && typeof ev.detail.index === "number"
+              ? ev.detail.index
+              : 0;
           current = idx;
           setProgressForIndex(idx);
         });

@@ -3,6 +3,60 @@ main {
   font-family: var(--sl-font-sans);
 }
 
+/* Fixed top navigation */
+.top-nav {
+  font-family: var(--sl-font-sans);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(3px);
+  z-index: 1000;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.top-nav.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.nav-links a {
+  margin-left: 1.25rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  opacity: 0.85;
+  transition: opacity 160ms ease;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -34,7 +88,6 @@ body {
   font-size: 3.25rem;
   margin: 0 0 0.25rem 0;
 }
-
 
 /* Hero entrance animations (fade-in + slide) */
 .hero-text {
@@ -210,7 +263,7 @@ body {
 }
 
 #content sl-carousel sl-card::part(base) {
-  background: #3d3d3d; /* card background */
+  background: #2c2c2c; /* card background */
   color: #ffffff; /* dark text inside cards */
   box-shadow: 0 8px 24px rgba(2, 6, 23, 0.12);
   border-radius: 10px;
@@ -321,9 +374,6 @@ sl-image-comparer.edu-comparer > [slot="after"] h3 {
 }
 
 /* Education horizontal scroller */
-.edu-section {
-  padding: 1rem 0 2rem 0;
-}
 
 .edu-controls {
   display: flex;
@@ -362,12 +412,25 @@ sl-image-comparer.edu-comparer > [slot="after"] h3 {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
   transition: background 120ms ease, transform 120ms ease;
 }
-
 .edu-prev {
   left: 8px;
 }
 .edu-next {
   right: 8px;
+}
+
+.first-container {
+  margin-bottom: 70px;
+}
+
+.whole-container {
+  background-color: var(--sl-panel-background-color);
+  padding: 30px;
+}
+
+.first-card::part(base) {
+  border: none;
+  box-shadow: none;
 }
 
 .edu-arrow:hover {
@@ -414,8 +477,93 @@ sl-image-comparer.edu-comparer > [slot="after"] h3 {
   }
 }
 
+/* ==============================
+   FOOTER
+================================ */
+
+.site-footer {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 3rem 1.25rem 1.5rem;
+  margin-top: 4rem;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.footer-section h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.5rem 0;
+  color: #d1d5db;
+}
+
+.footer-item sl-icon {
+  font-size: 1.1rem;
+  color: #60a5fa;
+}
+
+.footer-item a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.footer-item a:hover {
+  color: #fff;
+}
+
+.footer-cta p {
+  color: #cbd5f5;
+  margin-bottom: 1rem;
+}
+
+.footer-bottom {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-cta {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-cta {
+    grid-column: span 1;
+  }
+}
+
 /* Education carousel sizing — force full-bleed layout and larger slides */
 .edu-carousel {
+  max-height: 500px;
   width: 100%;
   max-width: none;
   margin-left: 0;
@@ -453,8 +601,12 @@ sl-image-comparer.edu-comparer > [slot="after"] h3 {
 }
 
 /* tighten spacing between progress and carousel */
-.edu-controls { margin-bottom: 0; }
-.edu-carousel { margin-top: 0; }
+.edu-controls {
+  margin-bottom: 0;
+}
+.edu-carousel {
+  margin-top: 0;
+}
 
 .edu-carousel::part(scroll-container) {
   padding-inline: var(--scroll-hint);
@@ -468,9 +620,13 @@ sl-image-comparer.edu-comparer > [slot="after"] h3 {
     margin-left: 0;
     --scroll-hint: 8%;
   }
-  .edu-carousel::part(scroll-container) { padding-inline: 8px; }
+  .edu-carousel::part(scroll-container) {
+    padding-inline: 8px;
+  }
   /* on smaller screens use nearly full width while leaving small gutters */
-  .edu-carousel sl-carousel-item { flex: 0 0 calc(100% - 32px); }
+  .edu-carousel sl-carousel-item {
+    flex: 0 0 calc(100% - 32px);
+  }
   .edu-carousel sl-card::part(base) {
     width: calc(100% - 32px) !important;
     max-width: none !important;
@@ -497,9 +653,6 @@ sl-card.work-card::part(body) {
 .work-side {
   flex: 1 1 50%;
   padding: 2rem;
-  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1), opacity 200ms ease,
-    box-shadow 220ms ease;
-  transform-origin: center;
   background: transparent;
 }
 
@@ -511,10 +664,6 @@ sl-card.work-card::part(body) {
 
 /* hover/focus interactions: enlarge hovered side and move it toward center while shrinking the other side */
 .work-side {
-  transition: flex 320ms cubic-bezier(0.2, 0.9, 0.2, 1),
-    transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1), opacity 200ms ease,
-    box-shadow 220ms ease;
-  will-change: transform, flex;
 }
 
 /* When the container is hovered, make both sides slightly smaller so the hovered side can expand into the center */
@@ -526,16 +675,12 @@ sl-card.work-card::part(body) {
 
 .work-left:hover .work-right:hover {
   flex: 1 1 40%;
-  transform: scale(0.98);
   opacity: 0.92;
 }
 
 /* Hovering (or focusing) a side expands it and brings it visually to the center */
 .work-side:hover,
 .work-side:focus {
-  flex: 1 1 60%;
-  transform: scale(1.04);
-  z-index: 2;
   opacity: 1;
   outline: none;
 }
@@ -598,7 +743,7 @@ sl-card.work-card::part(body) {
 #content sl-carousel {
   gap: 1rem;
   align-items: stretch; /* ensure items fill vertical space */
-  min-height: 380px; /* ensure there is space for cards and shadows */
+  min-height: 400px; /* ensure there is space for cards and shadows */
 }
 
 #content sl-carousel sl-carousel-item {
@@ -624,7 +769,7 @@ sl-card.work-card::part(body) {
 
 @media (max-width: 1100px) {
   #content sl-carousel {
-    min-height: 340px;
+    min-height: 400px;
   }
   #content sl-carousel sl-card::part(base) {
     min-height: 320px;
@@ -640,4 +785,167 @@ sl-card.work-card::part(body) {
     height: auto !important;
     min-height: 220px;
   }
+}
+
+/* ==============================
+   PROJECTS
+================================ */
+
+.projects-section {
+  margin-top: 4rem;
+}
+
+.projects-section h2 {
+  margin-bottom: 2rem;
+}
+
+/* Shared project styles */
+.project {
+  position: relative;
+  overflow: hidden;
+  transition: transform 260ms cubic-bezier(0.2, 0.9, 0.2, 1),
+    box-shadow 260ms ease;
+}
+
+.project:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+}
+
+/* Featured project */
+.project.featured {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  max-width: 1100px; /* same as nav & hero */
+  margin: 0 auto 3rem; /* center it */
+  padding: 1.25rem;
+}
+
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 600ms ease;
+}
+
+.project.featured:hover .project-media img {
+  transform: scale(1.05);
+}
+
+.project-content h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.project-desc {
+  color: #cbd5f5;
+  margin: 0.75rem 0 1.25rem;
+  line-height: 1.6;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.project-actions sl-button {
+  margin-right: 0.5rem;
+}
+
+/* Grid projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.project.compact h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.project.compact p {
+  color: #cbd5f5;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* Hover glow accent */
+.project::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px circle at var(--x, 50%) var(--y, 50%),
+    rgba(96, 165, 250, 0.15),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 200ms ease;
+  pointer-events: none;
+}
+
+.project:hover::after {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .project.featured {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==============================
+   WORK EXPERIENCE – PREMIUM HOVER
+================================ */
+
+.work-side {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow overlay (same as projects) */
+.work-side::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px circle at var(--x, 50%) var(--y, 50%),
+    rgba(96, 165, 250, 0.15),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 200ms ease;
+  pointer-events: none;
+}
+
+.work-side:hover::after,
+.work-side:focus::after {
+  opacity: 1;
+}
+
+.project {
+  width: 100%;
+  display: flex;
+}
+
+.project sl-card {
+  width: 100%;
 }
