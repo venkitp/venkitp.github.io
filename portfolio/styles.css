@@ -35,6 +35,52 @@ body {
   margin: 0 0 0.25rem 0;
 }
 
+
+/* Hero entrance animations (fade-in + slide) */
+.hero-text {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+.hero-text.animate-bounce {
+  animation: fade-slide-in 2000ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  /* ensure visible even after animation ends */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fade-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-profile.animate-pop img {
+  animation: pop-in 2000ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  opacity: 1;
+  transform: scale(1);
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.86);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .hero-sub {
   font-size: 1.25rem;
   color: #bdbdbd;
@@ -143,4 +189,455 @@ body {
   }
 }
 
-.about-container .
+/* Page background */
+body {
+  background: #000;
+  color: #fff;
+}
+
+/* Skills cards: light grey background with subtle shadow (scoped to the carousel in Skills) */
+/* Make carousel items flexible so slides-per-page can work at 3 columns without forcing overflow */
+#content sl-carousel {
+  gap: 1rem;
+}
+
+#content sl-carousel sl-carousel-item {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0.5rem 0.25rem;
+  box-sizing: border-box;
+}
+
+#content sl-carousel sl-card::part(base) {
+  background: #3d3d3d; /* card background */
+  color: #ffffff; /* dark text inside cards */
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  width: 100%;
+  max-width: 360px; /* prevent cards from growing too wide */
+  height: 360px; /* fixed height to avoid layout shifts */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#content sl-card::part(body) {
+  border-radius: 30px;
+}
+
+#content sl-carousel sl-card::part(body) {
+  padding: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#content sl-carousel sl-card:hover::part(base) {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.14);
+}
+
+/* Fixed height for images inside skills cards */
+#content sl-carousel sl-card img {
+  height: 180px; /* image height matches card height proportion */
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 0.75rem auto;
+}
+
+@media (max-width: 1100px) {
+  /* at narrower viewports, allow two slides per page to fit comfortably */
+  #content sl-carousel sl-card::part(base) {
+    max-width: 320px;
+    height: 320px;
+  }
+  #content sl-carousel sl-card img {
+    height: 140px;
+  }
+}
+
+@media (max-width: 720px) {
+  /* single column on small screens */
+  #content sl-carousel sl-card::part(base) {
+    max-width: 100%;
+    height: auto; /* let content decide height on small screens */
+    min-height: 220px;
+  }
+  #content sl-carousel sl-card img {
+    height: 110px;
+  }
+}
+
+/* Education comparer: make slots equal-width and full-bleed */
+sl-image-comparer.edu-comparer {
+  display: flex !important; /* force side-by-side layout */
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+/* Force slot children to act like two columns */
+sl-image-comparer.edu-comparer > [slot="before"],
+sl-image-comparer.edu-comparer > [slot="after"] {
+  flex: 1 1 50%;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 1.25rem 1.5rem;
+  color: inherit;
+  background: transparent;
+  min-height: 220px;
+  position: relative !important; /* override any absolute positioning */
+}
+
+/* Hide the built-in comparer handle so it doesn't overlay content */
+sl-image-comparer.edu-comparer::part(handle),
+sl-image-comparer.edu-comparer::part(thumb) {
+  display: none !important;
+}
+
+sl-image-comparer.edu-comparer > [slot="before"] h3,
+sl-image-comparer.edu-comparer > [slot="after"] h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 720px) {
+  sl-image-comparer.edu-comparer {
+    display: block !important;
+  }
+  sl-image-comparer.edu-comparer > [slot="before"],
+  sl-image-comparer.edu-comparer > [slot="after"] {
+    display: block;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Education horizontal scroller */
+.edu-section {
+  padding: 1rem 0 2rem 0;
+}
+
+.edu-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  padding: 0 0.5rem;
+}
+
+.edu-progress {
+  width: 100%;
+  margin-bottom: 0; /* removed extra bottom space */
+  cursor: pointer;
+}
+
+.edu-panels-wrapper {
+  position: relative;
+}
+
+.edu-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  transition: background 120ms ease, transform 120ms ease;
+}
+
+.edu-prev {
+  left: 8px;
+}
+.edu-next {
+  right: 8px;
+}
+
+.edu-arrow:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-50%) scale(1.03);
+}
+
+.edu-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+@media (max-width: 720px) {
+  .edu-arrow {
+    display: none;
+  }
+}
+
+.edu-panels {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding-inline: 64px; /* leave space for left/right arrows */
+  box-sizing: border-box;
+}
+
+.edu-panels::-webkit-scrollbar {
+  height: 10px;
+  display: none;
+}
+
+.edu-panels {
+  scrollbar-width: none; /* Firefox */
+}
+
+@media (max-width: 720px) {
+  /* smaller padding on narrow screens where arrows are hidden */
+  .edu-panels {
+    padding-inline: 16px;
+  }
+}
+
+/* Education carousel sizing — force full-bleed layout and larger slides */
+.edu-carousel {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  --scroll-hint: 14%; /* larger hint to make adjacent slide visible */
+  --slide-gap: 1rem;
+  box-sizing: border-box;
+}
+
+/* Provide padding inside the carousel's scroll container so the scroll hint is visible */
+.edu-carousel::part(scroll-container) {
+  padding-inline: var(--scroll-hint);
+}
+
+/* Slide sizing: make each slide a fixed flex-basis so they don't overlap */
+.edu-carousel sl-carousel-item {
+  flex: 0 0 85vw;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.edu-carousel sl-carousel-item sl-card::part(base),
+.edu-carousel sl-card::part(base) {
+  width: 100% !important;
+  max-width: 1200px !important;
+  min-height: 360px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.edu-carousel .edu-panel {
+  padding: 2rem;
+}
+
+/* tighten spacing between progress and carousel */
+.edu-controls { margin-bottom: 0; }
+.edu-carousel { margin-top: 0; }
+
+.edu-carousel::part(scroll-container) {
+  padding-inline: var(--scroll-hint);
+  gap: var(--slide-gap, 1rem);
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .edu-carousel {
+    width: 100%;
+    margin-left: 0;
+    --scroll-hint: 8%;
+  }
+  .edu-carousel::part(scroll-container) { padding-inline: 8px; }
+  /* on smaller screens use nearly full width while leaving small gutters */
+  .edu-carousel sl-carousel-item { flex: 0 0 calc(100% - 32px); }
+  .edu-carousel sl-card::part(base) {
+    width: calc(100% - 32px) !important;
+    max-width: none !important;
+    min-height: 260px;
+  }
+}
+
+/* Work experience split card */
+sl-card.work-card {
+  width: 100%;
+}
+
+sl-card.work-card::part(body) {
+  padding: 0; /* allow full-width internal layout */
+}
+
+.work-sides {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  width: 100%;
+}
+
+.work-side {
+  flex: 1 1 50%;
+  padding: 2rem;
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1), opacity 200ms ease,
+    box-shadow 220ms ease;
+  transform-origin: center;
+  background: transparent;
+}
+
+.divider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 0;
+}
+
+/* hover/focus interactions: enlarge hovered side and move it toward center while shrinking the other side */
+.work-side {
+  transition: flex 320ms cubic-bezier(0.2, 0.9, 0.2, 1),
+    transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1), opacity 200ms ease,
+    box-shadow 220ms ease;
+  will-change: transform, flex;
+}
+
+/* When the container is hovered, make both sides slightly smaller so the hovered side can expand into the center */
+/* .work-sides:hover .work-side {
+  flex: 1 1 40%;
+  transform: scale(0.98);
+  opacity: 0.92;
+} */
+
+.work-left:hover .work-right:hover {
+  flex: 1 1 40%;
+  transform: scale(0.98);
+  opacity: 0.92;
+}
+
+/* Hovering (or focusing) a side expands it and brings it visually to the center */
+.work-side:hover,
+.work-side:focus {
+  flex: 1 1 60%;
+  transform: scale(1.04);
+  z-index: 2;
+  opacity: 1;
+  outline: none;
+}
+
+/* mobile: disable the split expansion and stacking should remain natural */
+@media (max-width: 720px) {
+  .work-sides:hover .work-side {
+    flex: 1 1 100%;
+    transform: none;
+    opacity: 1;
+  }
+  .work-side:hover,
+  .work-side:focus {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* responsive: stack on small screens and make divider horizontal */
+@media (max-width: 720px) {
+  .work-sides {
+    flex-direction: column;
+  }
+  .divider {
+    height: 1px;
+    width: 100%;
+  }
+  .work-side {
+    padding: 1rem;
+  }
+}
+
+.edu-panel {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  min-height: 200px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+}
+
+.edu-panel h3 {
+  margin-top: 0;
+}
+
+@media (min-width: 900px) {
+  .edu-panel {
+    min-height: 320px;
+    padding: 2.25rem;
+  }
+}
+
+/* Carousel fixes to prevent clipping */
+.carousel-cards {
+  overflow: visible;
+  padding: 0.5rem 0;
+}
+
+#content sl-carousel {
+  gap: 1rem;
+  align-items: stretch; /* ensure items fill vertical space */
+  min-height: 380px; /* ensure there is space for cards and shadows */
+}
+
+#content sl-carousel sl-carousel-item {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0.5rem 0.25rem;
+  box-sizing: border-box;
+  height: 100%; /* allow item to stretch to carousel height */
+}
+
+/* Ensure cards fill the carousel item instead of being cut */
+#content sl-carousel sl-card::part(base) {
+  min-height: 360px;
+  height: 100% !important;
+}
+
+/* Constrain images so they don't overflow the card */
+#content sl-carousel sl-card img {
+  max-height: 52%;
+  height: auto;
+}
+
+@media (max-width: 1100px) {
+  #content sl-carousel {
+    min-height: 340px;
+  }
+  #content sl-carousel sl-card::part(base) {
+    min-height: 320px;
+    height: 100% !important;
+  }
+}
+
+@media (max-width: 720px) {
+  #content sl-carousel {
+    min-height: auto;
+  }
+  #content sl-carousel sl-card::part(base) {
+    height: auto !important;
+    min-height: 220px;
+  }
+}

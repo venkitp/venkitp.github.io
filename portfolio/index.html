@@ -19,11 +19,12 @@
 
   <body>
     <main>
+
       <!-- HERO / LANDING -->
       <section class="hero" id="hero">
         <div class="hero-inner">
           <div class="hero-text">
-            <h1>Venkateshwaran</h1>
+            <h1>Venkateshwaran TP</h1>
             <p class="hero-sub">Frontend Developer</p>
           </div>
 
@@ -37,111 +38,200 @@
         >
       </section>
       <!-- ABOUT ME & CONTENT -->
-      <section id="content">
-        <a class="top-bar" href="#hero" aria-label="Back to top">Back to top</a>
-        <div class="about-container">
-          <sl-card class="about-card">
-            <h2>About Me</h2>
-            <p>
-              I am a Front-End Developer with industry experience in building
-              scalable and accessible web applications using modern web
-              technologies. My professional experience has motivated me to
-              pursue a Master’s degree to strengthen my foundations in computer
-              science and advanced data-driven systems.
-            </p>
-          </sl-card>
-
-          <div class="profile">
-            <img src="../assets/8pp06.jpg" alt="Sample profile image" />
-          </div>
-        </div>
-      </section>
-
-      <!-- EDUCATION -->
-      <section>
-        <h2>Education</h2>
+       <section id="content">
+      <a class="top-bar" href="#hero" aria-label="Back to top">Back to top</a>
+      <div class="about-container">
         <sl-card>
-          <strong>Bachelor of Engineering – Computer Science</strong>
-          <p>Thiagarajar College of Engineering</p>
-          <p>CGPA: 9.46</p>
-
-          <sl-details summary="Relevant Coursework">
-            Data Structures, Algorithms, DBMS, Operating Systems, Web
-            Technologies
-          </sl-details>
+          <div>
+          <h2>About Me</h2>
+          <p>
+            I am a Front-End Developer with industry experience in building
+            scalable and accessible web applications using modern web
+            technologies. My professional experience has motivated me to pursue
+            a Master’s degree to strengthen my foundations in computer science
+            and advanced data-driven systems.
+          </p>
         </sl-card>
+
+  
+      </div>
+      <div class="carousel-cards">
+      <sl-carousel slides-per-page="3" autoplay loop>
+        <sl-carousel-item>
+          <sl-card>
+            <div>
+              <img src="../assets/angular.jpeg" alt="Angular Logo" />
+              <h3>Angular</h3>
+            </div>
+          </sl-card>
+        </sl-carousel-item>
+        
+        <sl-carousel-item>
+          <sl-card>
+            <div>
+              <img src="../assets/react.png" alt="React Logo" />
+              <h3>React</h3>
+            </div>
+          </sl-card>
+        </sl-carousel-item>
+        <sl-carousel-item>
+          <sl-card>
+            <div>
+              <img src="../assets/next.png" alt="NextJS Logo" />
+              <h3>NextJS</h3>
+            </div>
+          </sl-card>
+        </sl-carousel-item>
+        <sl-carousel-item>
+          <sl-card>
+            <div>
+              <img src="../assets/c.jpeg" alt="C Logo" />
+              <h3>C Programming</h3>
+            </div>
+          </sl-card>
+        </sl-carousel-item>
+        <sl-carousel-item>
+          <sl-card>
+            <div>
+              <img src="../assets/typescript.png" alt="TypeScript Logo" />
+              <h3>TypeScript</h3>
+            </div>
+          </sl-card>
+        </sl-carousel-item>
+      </sl-carousel>
+</div>
+      <!-- EDUCATION -->
+      <h2>Education</h2>
+      <section id="education" class="edu-section">
+        <div class="edu-controls">
+          <sl-progress-bar id="edu-progress" value="0" max="100" show-value class="edu-progress" aria-label="Education progress"></sl-progress-bar>
+        </div>
+
+        <sl-carousel class="edu-carousel scroll-hint" slides-per-page="1" mouse-dragging style="--scroll-hint: 12%;">
+          <sl-carousel-item>
+            <sl-card>
+              <div class="edu-panel">
+                <h3>Secondary School</h3>
+                <p><strong>Secondary School Certificate</strong></p>
+                <p>XYZ High School</p>
+                <p>Board: State Board</p>
+                <p>Year: 2014</p>
+                <p>Key Subjects: Mathematics, Physics, Chemistry</p>
+              </div>
+            </sl-card>
+          </sl-carousel-item>
+
+          <sl-carousel-item>
+            <sl-card>
+              <div class="edu-panel">
+                <h3>Higher Secondary</h3>
+                <p><strong>Higher Secondary Certificate</strong></p>
+                <p>ABC Higher Secondary School</p>
+                <p>Board: State Board</p>
+                <p>Year: 2016</p>
+                <p>Key Subjects: Mathematics, Computer Science</p>
+              </div>
+            </sl-card>
+          </sl-carousel-item>
+
+          <sl-carousel-item>
+            <sl-card>
+              <div class="edu-panel">
+                <h3>College</h3>
+                <p><strong>Bachelor of Engineering – Computer Science</strong></p>
+                <p>Thiagarajar College of Engineering</p>
+                <p>CGPA: 9.46</p>
+                <p>Relevant Coursework: Data Structures, Algorithms, DBMS, Operating Systems, Web Technologies</p>
+              </div>
+            </sl-card>
+          </sl-carousel-item>
+        </sl-carousel>
       </section>
 
       <!-- WORK EXPERIENCE -->
-      <section>
-        <h2>Work Experience</h2>
-        <sl-card>
-          <strong>Software Engineer – Frontend</strong>
-          <p>Caterpillar Inc.</p>
+      <h2>Work Experience</h2>
+      <sl-card class="work-card" aria-label="Work experience comparison">
+        <div class="work-sides" role="group" aria-label="Current and previous roles">
+          <div class="work-side work-left" tabindex="0" aria-label="Current role">
+            <h3>Software Engineer — Frontend (Current)</h3>
+            <p class="company">Caterpillar Inc. • 2022–Present</p>
 
-          <ul>
-            <li>Developed reusable UI components using Web Components</li>
-            <li>Collaborated with backend and UX teams</li>
-            <li>Worked on performance optimization and accessibility</li>
-          </ul>
+            <ul>
+              <li>Lead frontend development for key enterprise features</li>
+              <li>Built reusable Web Component library</li>
+              <li>Improved performance and accessibility across products</li>
+            </ul>
 
-          <div class="tags">
-            <sl-tag>JavaScript</sl-tag>
-            <sl-tag>Web Components</sl-tag>
-            <sl-tag>HTML</sl-tag>
-            <sl-tag>CSS</sl-tag>
+            <div class="tags">
+              <sl-tag>JavaScript</sl-tag>
+              <sl-tag>Web Components</sl-tag>
+              <sl-tag>Accessibility</sl-tag>
+            </div>
           </div>
-        </sl-card>
-      </section>
+
+          <div class="divider" aria-hidden="true"></div>
+
+          <div class="work-side work-right" tabindex="0" aria-label="Previous role">
+            <h3>Frontend Developer (Previous)</h3>
+            <p class="company">ACME Corp. • 2018–2022</p>
+
+            <ul>
+              <li>Implemented responsive UI for customer portal</li>
+              <li>Collaborated with design team to refine UX patterns</li>
+              <li>Maintained component library and QA automation</li>
+            </ul>
+
+            <div class="tags">
+              <sl-tag>React</sl-tag>
+              <sl-tag>TypeScript</sl-tag>
+              <sl-tag>Testing</sl-tag>
+            </div>
+          </div>
+        </div>
+      </sl-card>
 
       <!-- TECHNICAL SKILLS -->
-      <section>
-        <h2>Technical Skills</h2>
-        <sl-card>
-          <p><strong>Languages:</strong> JavaScript, HTML, CSS</p>
-          <p><strong>Web:</strong> Web Components, Shoelace, REST APIs</p>
-          <p><strong>Tools:</strong> Git, GitHub, VS Code</p>
-          <p><strong>Currently Learning:</strong> Data Science, Python</p>
-        </sl-card>
-      </section>
+      <h2>Technical Skills</h2>
+      <sl-card>
+        <p><strong>Languages:</strong> JavaScript, HTML, CSS</p>
+        <p><strong>Web:</strong> Web Components, Shoelace, REST APIs</p>
+        <p><strong>Tools:</strong> Git, GitHub, VS Code</p>
+        <p><strong>Currently Learning:</strong> Data Science, Python</p>
+      </sl-card>
 
       <!-- PROJECTS -->
-      <section>
-        <h2>Projects</h2>
-        <sl-card>
-          <strong>Portfolio Website</strong>
-          <p>
-            Designed and developed a personal portfolio using Shoelace Web
-            Components and GitHub Pages to present academic and professional
-            background.
-          </p>
-          <sl-button variant="primary" href="#" target="_blank">
-            GitHub
-          </sl-button>
-        </sl-card>
-      </section>
+      <h2>Projects</h2>
+      <sl-card>
+        <strong>Portfolio Website</strong>
+        <p>
+          Designed and developed a personal portfolio using Shoelace Web
+          Components and GitHub Pages to present academic and professional
+          background.
+        </p>
+        <sl-button variant="primary" href="#" target="_blank">
+          GitHub
+        </sl-button>
+      </sl-card>
 
       <!-- INTERESTS -->
-      <section>
-        <h2>Interests & Hobbies</h2>
-        <sl-card>
-          <ul>
-            <li>Strength training and fitness</li>
-            <li>Cooking</li>
-            <li>Reading technology blogs</li>
-          </ul>
-        </sl-card>
-      </section>
+      <h2>Interests & Hobbies</h2>
+      <sl-card>
+        <ul>
+          <li>Strength training and fitness</li>
+          <li>Cooking</li>
+          <li>Reading technology blogs</li>
+        </ul>
+      </sl-card>
 
       <!-- CONTACT -->
-      <section>
-        <h2>Contact</h2>
-        <sl-card>
-          <p>Email: your.email@example.com</p>
-          <p>GitHub: github.com/yourusername</p>
-          <p>LinkedIn: linkedin.com/in/yourprofile</p>
-        </sl-card>
-      </section>
+      <h2>Contact</h2>
+      <sl-card>
+        <p>Email: your.email@example.com</p>
+        <p>GitHub: github.com/yourusername</p>
+        <p>LinkedIn: linkedin.com/in/yourprofile</p>
+      </sl-card>
+    </div>
+       </section>
     </main>
 
     <script>
@@ -158,6 +248,86 @@
           window.scrollTo({ top, behavior: "smooth" });
         });
       });
+
+      // Animate hero when it enters viewport using IntersectionObserver
+      (function () {
+        const hero = document.getElementById('hero');
+        const heroText = document.querySelector('.hero-text');
+        const heroProfile = document.querySelector('.hero-profile');
+        if (!hero || !heroText) return;
+
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                heroText.classList.add('animate-bounce');
+                if (heroProfile) heroProfile.classList.add('animate-pop');
+              } else {
+                // remove classes so animation can replay on re-entry
+                heroText.classList.remove('animate-bounce');
+                if (heroProfile) heroProfile.classList.remove('animate-pop');
+              }
+            });
+          },
+          { threshold: 0.55 }
+        );
+
+        obs.observe(hero);
+      })();
+
+      // Education carousel using Shoelace: sync progress bar and arrows with <sl-carousel>
+      (function () {
+        const eduSection = document.getElementById('education');
+        if (!eduSection) return;
+
+        const carousel = eduSection.querySelector('sl-carousel');
+        if (!carousel) return;
+
+        const items = Array.from(carousel.querySelectorAll('sl-carousel-item'));
+        const progress = document.getElementById('edu-progress');
+        const prevBtn = eduSection.querySelector('.edu-prev');
+        const nextBtn = eduSection.querySelector('.edu-next');
+        let current = 0;
+
+        function updateArrows(i) {
+          if (prevBtn) prevBtn.disabled = i === 0;
+          if (nextBtn) nextBtn.disabled = i === items.length - 1;
+        }
+
+        function setProgressForIndex(i) {
+          const value = (i / (items.length - 1)) * 100;
+          if (progress) progress.value = Math.round(value);
+          updateArrows(i);
+        }
+
+        // clickable progress bar -> jump to slide
+        if (progress) {
+          progress.style.cursor = 'pointer';
+          progress.addEventListener('click', (e) => {
+            const rect = progress.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const frac = Math.max(0, Math.min(1, x / rect.width));
+            const idx = Math.round(frac * (items.length - 1));
+            if (typeof carousel.goToSlide === 'function') {
+              try { carousel.goToSlide(idx, 'smooth'); } catch (err) { carousel.goToSlide(idx); }
+            }
+          });
+        }
+
+        // arrow handlers -> use carousel methods (these emit sl-slide-change)
+        if (prevBtn) prevBtn.addEventListener('click', () => { if (typeof carousel.previous === 'function') carousel.previous('smooth'); });
+        if (nextBtn) nextBtn.addEventListener('click', () => { if (typeof carousel.next === 'function') carousel.next('smooth'); });
+
+        // listen to carousel slide change events to sync UI
+        carousel.addEventListener('sl-slide-change', (ev) => {
+          const idx = ev.detail && typeof ev.detail.index === 'number' ? ev.detail.index : 0;
+          current = idx;
+          setProgressForIndex(idx);
+        });
+
+        // initialize
+        setProgressForIndex(0);
+      })();
     </script>
   </body>
 </html>
