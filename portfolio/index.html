@@ -51,172 +51,138 @@
         <!-- <a class="top-bar" href="#hero" aria-label="Back to top">Back to top</a> -->
         <div class="whole-container">
           <div class="first-container">
-            <sl-card class="first-card">
+            <sl-card class="first-card about-card">
               <h2>ABOUT ME</h2>
-              <p>
-                A Computer Science Engineer with strong expertise in Front End
-                Development, focused on building user-friendly, accessible, and
-                visually appealing web applications. Experienced in developing
-                responsive UI components using modern frameworks and best
-                practices, with a keen eye for performance and usability.
+
+              <p class="about-lead">
+                Computer Science Engineer specializing in Frontend Development
+                with a strong focus on building accessible, user-friendly, and
+                visually polished web applications.
               </p>
-              <br />
 
               <p>
-                Currently seeking educational opportunities in Data Science,
-                Data Analytics and Applied Machine Learning to strengthen my
-                analytical and problem-solving skills, and to integrate
-                data-driven approaches into real-world software development.
-                Motivated to continuously learn, adapt, and contribute
-                effectively in both academic and professional environments.
+                I have hands-on experience creating responsive UI components
+                using modern frameworks and best practices, with attention to
+                performance, usability, and accessibility standards.
+              </p>
+
+              <p>
+                I am currently seeking opportunities in
+                <strong>Data Science</strong>, <strong>Data Analytics</strong>,
+                and <strong>Applied Machine Learning</strong>
+                to strengthen my analytical skills and integrate data-driven
+                approaches into real-world software solutions.
+              </p>
+
+              <p class="about-highlight">
+                Motivated, adaptable, and eager to contribute in both academic
+                and professional environments.
               </p>
             </sl-card>
           </div>
           <div class="carousel-cards">
-            <sl-carousel slides-per-page="3" autoplay loop>
-              <sl-carousel-item>
-                <sl-card>
-                  <div>
+            <section class="skills-section">
+              <h2>TECHNICAL SKILLS</h2>
+
+              <div class="skills-carousel">
+                <button class="skill-arrow left">‹</button>
+
+                <div class="skills-track">
+                  <!-- Skill Card -->
+                  <sl-card class="skill-card">
                     <img src="../assets/angular.jpeg" alt="Angular Logo" />
                     <h3>Angular</h3>
-                  </div>
-                </sl-card>
-              </sl-carousel-item>
+                  </sl-card>
 
-              <sl-carousel-item>
-                <sl-card>
-                  <div>
+                  <sl-card class="skill-card">
                     <img src="../assets/react.png" alt="React Logo" />
                     <h3>React</h3>
-                  </div>
-                </sl-card>
-              </sl-carousel-item>
-              <sl-carousel-item>
-                <sl-card>
-                  <div>
+                  </sl-card>
+
+                  <sl-card class="skill-card">
                     <img src="../assets/next.png" alt="NextJS Logo" />
                     <h3>NextJS</h3>
-                  </div>
-                </sl-card>
-              </sl-carousel-item>
-              <sl-carousel-item>
-                <sl-card>
-                  <div>
+                  </sl-card>
+
+                  <sl-card class="skill-card">
                     <img src="../assets/c.jpeg" alt="C Logo" />
                     <h3>C Programming</h3>
-                  </div>
-                </sl-card>
-              </sl-carousel-item>
-              <sl-carousel-item>
-                <sl-card>
-                  <div>
+                  </sl-card>
+
+                  <sl-card class="skill-card">
                     <img src="../assets/typescript.png" alt="TypeScript Logo" />
                     <h3>TypeScript</h3>
-                  </div>
-                </sl-card>
-              </sl-carousel-item>
-              <sl-carousel-item>
-                <sl-card>
-                  <div>
+                  </sl-card>
+
+                  <sl-card class="skill-card">
                     <img src="../assets/css.png" alt="CSS Logo" />
                     <h3>CSS</h3>
-                  </div>
-                </sl-card>
-              </sl-carousel-item>
-              <sl-carousel-item>
-                <sl-card>
-                  <div>
+                  </sl-card>
+
+                  <sl-card class="skill-card">
                     <img src="../assets/html.png" alt="HTML Logo" />
                     <h3>HTML</h3>
-                  </div>
-                </sl-card>
-              </sl-carousel-item>
-              <sl-carousel-item>
-                <sl-card>
-                  <div>
+                  </sl-card>
+
+                  <sl-card class="skill-card">
                     <img src="../assets/JS.png" alt="JavaScript Logo" />
                     <h3>JavaScript</h3>
-                  </div>
-                </sl-card>
-              </sl-carousel-item>
-              <sl-carousel-item>
-                <sl-card>
-                  <div>
+                  </sl-card>
+
+                  <sl-card class="skill-card">
                     <img src="../assets/lit.jpeg" alt="Lit Logo" />
                     <h3>Lit</h3>
-                  </div>
-                </sl-card>
-              </sl-carousel-item>
-            </sl-carousel>
+                  </sl-card>
+                </div>
+
+                <button class="skill-arrow right">›</button>
+              </div>
+            </section>
           </div>
           <!-- EDUCATION -->
           <section id="education" class="edu-section">
             <h2 style="margin-bottom: 30px">EDUCATION</h2>
-            <div class="edu-controls">
-              <sl-progress-bar
-                id="edu-progress"
-                value="0"
-                max="100"
-                show-value
-                class="edu-progress"
-                aria-label="Education progress"
-              ></sl-progress-bar>
+
+            <div class="edu-grid">
+              <!-- Secondary School -->
+              <sl-card class="edu-card">
+                <h3>Secondary School</h3>
+                <p><strong>Secondary School Certificate</strong></p>
+                <p>Indian School, Ras Al Khaimah, UAE</p>
+                <p>Board: CBSE</p>
+                <p>Year: 2018</p>
+                <p>Key Subjects: Mathematics, Physics, Chemistry</p>
+                <p>Grade: 90%</p>
+              </sl-card>
+
+              <!-- Higher Secondary -->
+              <sl-card class="edu-card">
+                <h3>Higher Secondary</h3>
+                <p><strong>Higher Secondary Certificate</strong></p>
+                <p>Indian School, Ras Al Khaimah, UAE</p>
+                <p>Board: CBSE</p>
+                <p>Year: 2020</p>
+                <p>Key Subjects: Mathematics, Computer Science</p>
+                <p>Grade: 93.8%</p>
+              </sl-card>
+
+              <!-- College -->
+              <sl-card class="edu-card">
+                <h3>College</h3>
+                <p>
+                  <strong
+                    >Bachelor of Engineering – Computer Science and
+                    Engineering</strong
+                  >
+                </p>
+                <p>Thiagarajar College of Engineering, Madurai, India</p>
+                <p>CGPA: 9.46</p>
+                <p>
+                  Relevant Coursework: Data Structures, Algorithms, DBMS,
+                  Operating Systems, Web Technologies
+                </p>
+              </sl-card>
             </div>
-
-            <sl-carousel
-              class="edu-carousel scroll-hint"
-              slides-per-page="1"
-              mouse-dragging
-              style="--scroll-hint: 12%"
-            >
-              <sl-carousel-item>
-                <sl-card>
-                  <div class="edu-panel">
-                    <h3>Secondary School</h3>
-                    <p><strong>Secondary School Certificate</strong></p>
-                    <p>Indian School, Ras Al Khaimah, UAE</p>
-                    <p>Board: CBSE</p>
-                    <p>Year: 2018</p>
-                    <p>Key Subjects: Mathematics, Physics, Chemistry</p>
-                    <p>Grade: 90%</p>
-                  </div>
-                </sl-card>
-              </sl-carousel-item>
-
-              <sl-carousel-item>
-                <sl-card>
-                  <div class="edu-panel">
-                    <h3>Higher Secondary</h3>
-                    <p><strong>Higher Secondary Certificate</strong></p>
-                    <p>Indian School, Ras Al Khaimah, UAE</p>
-                    <p>Board: CBSE</p>
-                    <p>Year: 2020</p>
-                    <p>Key Subjects: Mathematics, Computer Science</p>
-                    <p>Grade: 93.8%</p>
-                  </div>
-                </sl-card>
-              </sl-carousel-item>
-
-              <sl-carousel-item>
-                <sl-card>
-                  <div class="edu-panel">
-                    <h3>College</h3>
-                    <p>
-                      <strong
-                        >Bachelor of Engineering – Computer Science and
-                        Engineering</strong
-                      >
-                    </p>
-                    <p>Thiagarajar College of Engineering, Madurai, India</p>
-                    <p>CGPA: 9.46</p>
-                    <p>
-                      Relevant Coursework: Data Structures, Algorithms, DBMS,
-                      Operating Systems, Web Technologies
-                    </p>
-                  </div>
-                </sl-card>
-              </sl-carousel-item>
-            </sl-carousel>
           </section>
 
           <!-- WORK EXPERIENCE -->
@@ -234,40 +200,6 @@
               >
                 <h3>Associate Software Engineer (Current)</h3>
                 <p class="company">Caterpillar Inc. • 2024 Jul–Present</p>
-
-                <ul>
-                  <li>
-                    Specialized in building UI frameworks using cutting edge
-                    technology and frameworks like Angular, React and Next JS
-                  </li>
-                  <br />
-                  <li>Working with git and GitHub version control systems</li>
-                  <br />
-                  <li>Experience with yarn and node package managers</li>
-                  <br />
-                  <li>
-                    Experience in writing scripts for transformation of code
-                    using JSCodeshift, cheerio.
-                  </li>
-                  <br />
-                  <li>
-                    Built web components in the form of a standard UI library
-                    for the whole organization which can be used by other UI
-                    teams in order to leverage their own UI
-                  </li>
-                  <br />
-                  <li>
-                    Provided a systematic plan to migrate code from one version
-                    to another without introducing breaking changes by using
-                    command line scripts to migrate the changes automatically
-                  </li>
-                  <br />
-                  <li>
-                    Provided a method to use the standardized web components
-                    library by using CDN’s which are compatible with different
-                    other UI libraries like AEM.
-                  </li>
-                </ul>
 
                 <div class="tags">
                   <sl-tag>JavaScript</sl-tag>
@@ -290,32 +222,6 @@
               >
                 <h3>Intern</h3>
                 <p class="company">Caterpillar Inc. Jan 2024 - Jul 2024</p>
-
-                <ul>
-                  <li>
-                    Developed different UI components required by any UI
-                    library. Components developed include Side Navigation,
-                    Primary Navigation.
-                  </li>
-                  <br />
-                  <li>Collaborated with design team to refine UX patterns</li>
-                  <br />
-                  <li>
-                    Enhanced the already built UI components like Table, Tabs,
-                    Anchor Navigation, Accordion with accessibility features.
-                  </li>
-                  <br />
-                  <li>
-                    Excelled in different accessibility tools like screen
-                    readers in different platforms like Voiceover, Talkback,
-                    NVDA, JAWS
-                  </li>
-                  <br />
-                  <li>
-                    Introduced concepts like Lazy Loading and Virtualization for
-                    different UI components in the standardized UI library
-                  </li>
-                </ul>
 
                 <div class="tags">
                   <sl-tag>React</sl-tag>
@@ -454,6 +360,28 @@
     </main>
 
     <script>
+      const track = document.querySelector(".skills-track");
+      const leftBtn = document.querySelector(".skill-arrow.left");
+      const rightBtn = document.querySelector(".skill-arrow.right");
+
+      const scrollAmount = 320;
+
+      rightBtn.addEventListener("click", () => {
+        track.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      });
+
+      leftBtn.addEventListener("click", () => {
+        track.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      });
+
+      // Auto-scroll (optional)
+      setInterval(() => {
+        if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
+          track.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          track.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        }
+      }, 3500);
       document.querySelectorAll(".project, .work-side").forEach((card) => {
         card.addEventListener("mousemove", (e) => {
           const rect = card.getBoundingClientRect();
